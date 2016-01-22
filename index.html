@@ -19,44 +19,80 @@
 
     <script>
         var the_number = null;
-
+        the_number = pick_number();
         function pick_number(){
+            //Generate a random number between 1 and 10 and then return that number
             var random_number = Math.floor(Math.random() * 10) + 1;
-            //Generating a random number between 1 and 10 and then return that number
             return random_number;
         }
 
-        //using jQuery apply a click handler to the button that calls function make_guess
-        $('#guess_input').click(make_guess(){alert('clicked!');});
+        //using jQuery apply a click handler to the BUTTON that calls function make_guess
+        $(document).ready(function(){
+            $('#button').click(function(){
+                make_guess();
+            });
+        });
 
         function make_guess(){
             //grab the value of the input from above and assign it to variable the_guess
+            //is that the right value? Is the button submitting the user's guess?
             var the_guess = $("#guess_input").val();
 
                 if (the_guess > the_number){
                     $("#response_div").text("Too High!");
                 } else if (the_guess < the_number){
                     $("#response_div").text("Too Low!");
-                } else if (the_guess == the_number){
-                    $("#response_div").text("You guessed it!");
                 } else {
-                    $("#response_div").text("That is not a valid guess.");
+                    $("#response_div").text("You guessed it!");
                 }
         }
 
     </script>
     <style>
-        div{
-            border: 2px solid gray;
-            width: 100px;
-            height: 100px;
+        body{
+            background-color: purple;
+            position: relative;
+        }
+        #container{
+            width: 500px;
+            height: 300px;
+            position: absolute;
+            top: 50vh;
+            left: 50vw;
+            transform: translate(-50%, -50%);
+            font-size: 3.5vh;
+            color: white;
+        }
+
+        input{
+            position: relative;
+            left: 5vw;
+            color: black;
+        }
+        button{
+            position: relative;
+            left: 10vw;
+            height: 8vh;
+            width: 12vw;
+            margin-top: 2vh;
+        }
+        #response_div{
+            border: 3px solid gold;
+            width: 25vw;
+            height: 50px;
+            position: relative;
+            left: 3.5vw;
+            margin-top: 2vh;
+
         }
     </style>
 </head>
-    <!--TODO: assign its return value to the variable the_number-->
 <body onload="pick_number()">
-    Guess a number between 1 and 10 <input type="text" name="number" placeholder="Enter Number">
-    <div id="response_div"></div>
-    <button type="button" class="btn btn-success" id="guess_input">Enter</button>
+    <div id="container">
+        <p>Guess a number between 1 and 10 </p>
+        <input type="text" name="number" id="guess_input" placeholder="Enter Number">
+        <div id="response_div"></div>
+        <button type="submit" class="btn btn-success" id="button">Enter</button>
+    </div>
 </body>
 </html>
