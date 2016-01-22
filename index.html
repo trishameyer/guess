@@ -27,12 +27,11 @@
         }
 
         //using jQuery apply a click handler to the button that calls function make_guess
-        $("button").click(make_guess());
-
+        $('#guess_input').click(make_guess(){alert('clicked!');});
 
         function make_guess(){
             //grab the value of the input from above and assign it to variable the_guess
-            //var the_guess = $;
+            var the_guess = $("#guess_input").val();
 
                 if (the_guess > the_number){
                     $("#response_div").text("Too High!");
@@ -56,8 +55,8 @@
 </head>
     <!--TODO: assign its return value to the variable the_number-->
 <body onload="pick_number()">
-    <input type="text" name="number" placeholder="Enter Number">
+    Guess a number between 1 and 10 <input type="text" name="number" placeholder="Enter Number">
     <div id="response_div"></div>
-    <button type="button" class="btn btn-success">Enter</button>
+    <button type="button" class="btn btn-success" id="guess_input">Enter</button>
 </body>
 </html>
