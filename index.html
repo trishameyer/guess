@@ -13,10 +13,14 @@
 
     <script>
         var the_number = null;
-        the_number = pick_number();
-
+       // the_number = pick_number();
+       // function pick_number(){
+       //     var random_number = Math.floor(Math.random() * 10) + 1;
+       //     return random_number;
+       // }
 
         $(document).ready(function(){
+            the_number = pick_number();
             //Generate a random number between 1 and 10 and then return that number (moved this comment to the appropriate place
             //Moved my random pick number function so it runs at document loaded
             function pick_number(){
