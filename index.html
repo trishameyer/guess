@@ -9,7 +9,7 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
@@ -17,12 +17,14 @@
 </head>
 <body> <!--onload="pick_number()"-->
     <div id="container">
-        <p>Guess a number between 1 and 10 </p>
-        <!--Deleted name="number" from my input because I am not using it to select it at all-->
-        <input type="text"  id="guess_input" placeholder="Enter Number">
-        <div id="response_div"></div>
-        <button type="submit" class="btn btn-success" id="button">Enter</button>
-        <button type='reset' class='btn btn-primary'>Reset</button>
+        <div class="parent">
+            <h2>Guess a number between 1 and 10 </h2>
+            <!--Deleted name="number" from my input because I am not using it to select it at all-->
+            <input type="text" id="guess_input" placeholder="Enter Number">
+            <div id="response_div"></div>
+            <button type="submit" class="btn btn-success" id="button">Enter</button>
+            <button type='reset' class='btn btn-primary'>Reset</button>
+        </div>
     </div>
 </body>
 </html>

@@ -76,6 +76,7 @@ $(document).ready(function(){
 
     $('.btn-success').click(function(){
         myGuess.make_guess();
+        $('input').val('');
     });
 
     //doesn't work yet
